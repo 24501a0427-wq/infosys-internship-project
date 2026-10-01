@@ -40,6 +40,27 @@ from report import build_pdf, write_summary
 st.set_page_config(page_title="AI-Powered Visual Data Analytics and Business Intelligence Platform", page_icon="🦺", layout="wide")
 
 
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#060a10;--panel:#0d141e;--panel2:#111b27;--line:#243244;--text:#f4f7fb;--muted:#8e9aaa;--yellow:#ffd21c;--cyan:#59e1ef;--green:#4ade80;--red:#ff5d73}
+html,body,[class*="css"]{font-family:Inter,sans-serif}.stApp{background:radial-gradient(circle at 85% 5%,rgba(255,210,28,.08),transparent 25%),radial-gradient(circle at 0 80%,rgba(89,225,239,.04),transparent 22%),var(--bg);color:var(--text)}
+.block-container{max-width:1450px;padding-top:2rem;padding-bottom:3rem}section[data-testid="stSidebar"]{background:#080d14;border-right:1px solid var(--line)}
+.brand{padding:8px 5px 20px}.mark{width:44px;height:44px;border:1px solid rgba(255,210,28,.55);border-radius:13px;display:flex;align-items:center;justify-content:center;color:var(--yellow);font-size:24px;box-shadow:0 0 25px rgba(255,210,28,.1)}.brand h2{font:700 22px 'Space Grotesk';margin:12px 0 2px}.brand p{font-size:10px;color:var(--muted);letter-spacing:1.8px;text-transform:uppercase}
+section[data-testid="stSidebar"] div[role="radiogroup"]{gap:4px}section[data-testid="stSidebar"] div[role="radiogroup"] label{border:1px solid transparent;border-radius:11px;padding:8px 9px}section[data-testid="stSidebar"] div[role="radiogroup"] label:hover{background:#101924;border-color:#1e2b3a}
+.status{background:linear-gradient(145deg,#101925,#0a1018);border:1px solid var(--line);border-radius:14px;padding:13px;margin-top:18px}.sr{display:flex;justify-content:space-between;padding:7px 0;font-size:11px;color:#b7c1cd}.dot{width:7px;height:7px;border-radius:50%;display:inline-block;background:var(--green);margin-right:7px;box-shadow:0 0 9px rgba(74,222,128,.5)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(255,210,28,.1),transparent 42%),linear-gradient(145deg,#111b28,#090f17);border:1px solid #29394c;border-radius:24px;padding:42px 46px;margin-bottom:25px;box-shadow:0 20px 65px rgba(0,0,0,.3)}.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(255,210,28,.14);border-radius:50%;right:-80px;top:-105px;box-shadow:0 0 0 30px rgba(255,210,28,.025),0 0 0 60px rgba(255,210,28,.018)}.eyebrow,.kicker{color:var(--yellow);font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.hero h1{font:700 clamp(40px,5vw,68px)/.98 'Space Grotesk';letter-spacing:-2.5px;margin:10px 0}.hero h1 span{color:var(--yellow)}.hero p{max-width:780px;color:#aab5c3;line-height:1.7;font-size:15px}.page-title{font:700 36px 'Space Grotesk';letter-spacing:-1px;margin:5px 0}.page-desc{color:var(--muted);margin-bottom:24px}
+.card{background:linear-gradient(145deg,rgba(17,27,39,.96),rgba(9,15,23,.96));border:1px solid var(--line);border-radius:17px;padding:21px;height:100%;box-sizing:border-box}.accent{border-top:2px solid var(--yellow)}.ct{font:700 17px 'Space Grotesk';margin-bottom:7px}.muted{color:var(--muted);font-size:13px;line-height:1.65}.ibox{width:42px;height:42px;border-radius:12px;background:rgba(255,210,28,.08);border:1px solid rgba(255,210,28,.18);display:flex;align-items:center;justify-content:center;color:var(--yellow);font-size:19px;margin-bottom:14px}
+.pipeline{display:flex;align-items:center;gap:8px;overflow:auto;margin:15px 0 28px}.node{min-width:145px;background:#0d151f;border:1px solid var(--line);border-radius:13px;padding:13px;text-align:center}.node b{display:block;font-size:11px}.node small{color:var(--muted);font-size:10px}.arrow{color:var(--yellow);font-weight:800}
+.line{display:flex;align-items:center;gap:12px;margin:28px 0 15px}.line span{color:var(--yellow);font-size:10px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}.line:after{content:"";height:1px;background:var(--line);flex:1}
+div[data-testid="stMetric"]{background:linear-gradient(145deg,#111b27,#0b121b);border:1px solid var(--line);padding:16px;border-radius:15px}div[data-testid="stMetricLabel"]{color:var(--muted)}div[data-testid="stMetricValue"]{font-family:'Space Grotesk';color:var(--text)}
+.stButton>button,.stDownloadButton>button{border-radius:10px;min-height:42px;font-weight:700;border:1px solid #354355;background:#111a25;color:var(--text)}.stButton>button:hover,.stDownloadButton>button:hover{border-color:var(--yellow);color:var(--yellow)}.stButton>button[kind="primary"]{background:var(--yellow);color:#070a0e;border-color:var(--yellow)}
+.stTextInput input,.stTextArea textarea,.stSelectbox [data-baseweb="select"]>div,.stFileUploader section{background:#0d141e!important;border-color:#273548!important;border-radius:10px!important}.stFileUploader section{border:1px dashed #39495c!important}
+[data-testid="stDataFrame"]{border:1px solid var(--line);border-radius:12px;overflow:hidden}.footer{margin-top:48px;border-top:1px solid var(--line);padding-top:15px;color:#667384;font-size:10px;display:flex;justify-content:space-between}
+</style>""", unsafe_allow_html=True)
+
+
+
 
 
 # ── load once ──────────────────────────────────────────────
@@ -72,21 +93,22 @@ load_sample_manual()
 
 # ── sidebar ────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### 🦺 AI-Powered Visual Data Analytics and Business Intelligence Platform")
+    st.markdown("""<div class="brand"><div class="mark">◈</div><h2>VISIONDESK AI</h2><p>JARVIS · Safety Intelligence</p></div>""", unsafe_allow_html=True)
     page = st.radio("Go to", ["🏠 Home", "👷 PPE Detection", "📄 Documents",
                               "🤖 Ask AI", "📊 Dashboard", "📋 Report"])
     st.divider()
-    st.write(("✅" if model else "❌") + " PPE model (best.pt)")
-    st.write(("✅" if has_key() else "⚠️") + f" Gemini ({MODEL})")
-    st.write(f"📚 {kb.total_chunks()} chunks in knowledge base")
+    st.markdown(f"""<div class="status"><div class="sr"><span><i class="dot"></i>PPE model</span><b>{'ONLINE' if model else 'OFFLINE'}</b></div>""", unsafe_allow_html=True)
+    st.markdown(f"""<div class="sr"><span><i class="dot"></i>Gemini</span><b>{'READY' if has_key() else 'NO KEY'}</b></div>""", unsafe_allow_html=True)
+    st.markdown(f"""<div class="sr"><span><i class="dot"></i>Knowledge base</span><b>{kb.total_chunks()} CHUNKS</b></div></div>""", unsafe_allow_html=True)
 
 
 # ══════════════════════════════════════════════════════════
 # 🏠 HOME
 # ══════════════════════════════════════════════════════════
 if page == "🏠 Home":
-    st.title("🦺 AI-Powered Visual Data Analytics and Business Intelligence Platform")
-    st.subheader("VisionDesk AI - Multimodal Workplace Intelligence System")
+    st.markdown("""<div class="hero"><div class="eyebrow">JARVIS · WORKPLACE INTELLIGENCE</div><h1>See the site.<br><span>Understand the risk.</span></h1><p>VisionDesk AI combines computer vision, document intelligence, grounded AI reasoning and business analytics into one safety intelligence workspace.</p></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="pipeline"><div class="node"><b>01 · VISION</b><small>PPE detection</small></div><div class="arrow">→</div><div class="node"><b>02 · KNOWLEDGE</b><small>Safety documents</small></div><div class="arrow">→</div><div class="node"><b>03 · REASONING</b><small>Gemini + LangGraph</small></div><div class="arrow">→</div><div class="node"><b>04 · ANALYTICS</b><small>KPIs + reports</small></div></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="line"><span>System Overview</span></div>""", unsafe_allow_html=True)
     st.markdown("""
 1. **👷 PPE Detection** – upload a site image or video, see violations
 2. **📄 Documents** – upload safety manuals and inspection reports
@@ -104,7 +126,7 @@ if page == "🏠 Home":
 # 👷 PPE DETECTION  (Milestone 1)
 # ══════════════════════════════════════════════════════════
 elif page == "👷 PPE Detection":
-    st.header("👷 PPE Detection")
+    st.markdown('<div class="kicker">MILESTONE 01 · VISION</div><div class="page-title">PPE Detection</div><div class="page-desc">Computer vision inspection for workplace safety evidence.</div>', unsafe_allow_html=True)
     if not model:
         st.error("best.pt not found in the project folder.")
         st.stop()
@@ -154,7 +176,7 @@ elif page == "👷 PPE Detection":
 # 📄 DOCUMENTS  (Milestone 2)
 # ══════════════════════════════════════════════════════════
 elif page == "📄 Documents":
-    st.header("📄 Document Knowledge Base")
+    st.markdown('<div class="kicker">MILESTONE 02 · KNOWLEDGE</div><div class="page-title">Safety Knowledge Base</div><div class="page-desc">Transform unstructured manuals and reports into searchable semantic knowledge.</div>', unsafe_allow_html=True)
     files = st.file_uploader("Upload manuals / inspection or incident reports",
                              type=["pdf", "txt", "docx"], accept_multiple_files=True)
     if files and st.button("Add to knowledge base", type="primary"):
@@ -184,7 +206,7 @@ elif page == "📄 Documents":
 # 🤖 ASK AI  (Milestone 3 - LangGraph agent)
 # ══════════════════════════════════════════════════════════
 elif page == "🤖 Ask AI":
-    st.header("🤖 Ask the Safety AI")
+    st.markdown('<div class="kicker">MILESTONE 03 · REASONING</div><div class="page-title">Safety AI</div><div class="page-desc">Ask questions using visual observations and documented safety rules.</div>', unsafe_allow_html=True)
 
     last = st.session_state.get("last")
     use_image = False
@@ -232,7 +254,7 @@ elif page == "🤖 Ask AI":
 # 📊 DASHBOARD  (Milestone 4)
 # ══════════════════════════════════════════════════════════
 elif page == "📊 Dashboard":
-    st.header("📊 Safety Dashboard")
+    st.markdown('<div class="kicker">MILESTONE 04 · ANALYZE</div><div class="page-title">Safety Analytics</div><div class="page-desc">Turn inspection history into operational KPIs and trend intelligence.</div>', unsafe_allow_html=True)
     scans = storage.load_scans()
     k = storage.kpis(scans)
 
@@ -268,7 +290,7 @@ elif page == "📊 Dashboard":
 # 📋 REPORT  (Milestone 4)
 # ══════════════════════════════════════════════════════════
 elif page == "📋 Report":
-    st.header("📋 Compliance Report")
+    st.markdown('<div class="kicker">MILESTONE 04 · REPORT</div><div class="page-title">Compliance Reports</div><div class="page-desc">Generate an AI-assisted summary and export the inspection history.</div>', unsafe_allow_html=True)
     scans = storage.load_scans()
 
     if st.button("Generate report", type="primary"):
